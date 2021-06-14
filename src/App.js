@@ -5,11 +5,13 @@ import './styles/main.scss'
 import {Switch,Route} from 'react-router'
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
+import { ProfileProvider } from './context/profile.context';
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
+    <ProfileProvider>
     <Switch>
       <PublicRoute path='/signin'>
         <SignIn/>
@@ -19,6 +21,7 @@ function App() {
         <Home/>
       </PrivateRoute>
     </Switch>
+    </ProfileProvider>
   )
 }
 
