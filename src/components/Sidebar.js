@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import DashboardToggle from './dashboard/DashboardToggle'
+import DashboardToggle from './dashboard/DashboardToggle';
 
 const Sidebar = () => {
   return (

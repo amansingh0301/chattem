@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Redirect, Route } from 'react-router';
 import { Container, Loader } from 'rsuite';
