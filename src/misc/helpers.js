@@ -1,4 +1,5 @@
 /* eslint-disable arrow-body-style */
+/* eslint-disable no-param-reassign */
 export function getNameInitials(name) {
   const splitName = name.toUpperCase().split(' ');
 
@@ -24,7 +25,7 @@ export function transformToArrWithId(snapVal) {
 export async function getUserUpdates(userId, keyToUpdate, value, db) {
   const updates = {};
 
-  updates[`/profile/${userId}/${keyToUpdate}`] = value;
+  updates[`/profiles/${userId}/${keyToUpdate}`] = value;
 
   const getMsgs = db
     .ref('/messages')
@@ -49,4 +50,18 @@ export async function getUserUpdates(userId, keyToUpdate, value, db) {
   });
 
   return updates;
+}
+
+export function groupBy(array, groupingKeyFn) {
+  return array.reduce((result, item) => {
+    const groupingKey = groupingKeyFn(item);
+
+    if (!result[groupingKey]) {
+      result[groupingKey] = [];
+    }
+
+    result[groupingKey].push(item);
+
+    return result;
+  }, {});
 }
